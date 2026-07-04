@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   ActivityIndicator,
+  Alert,
   Image,
   KeyboardAvoidingView,
   Platform,
@@ -30,6 +31,7 @@ export const LoginScreen: React.FC = () => {
     }
     try {
       await login({ email: email.trim(), password });
+      Alert.alert('Success', 'Login successful');
     } catch {
       // error is set in context
     }
